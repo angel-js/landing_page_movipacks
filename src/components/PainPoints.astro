@@ -1,0 +1,67 @@
+---
+const pains = [
+  {
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+    title: 'El papel nunca cuadra',
+    text: 'Cierras el día contando paquetes a mano y siempre falta uno. No sabes si fue error tuyo, del delivery o se perdió en el camino.',
+  },
+  {
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    title: '¿Cuánto gané esta semana?',
+    text: 'No tienes idea hasta que te sientas a calcularlo. Y cuando lo haces tarda horas — entre el Excel, el WhatsApp y los papeles.',
+  },
+  {
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    title: 'Si un delivery falla, no tienes cómo probarlo',
+    text: 'No sabes qué paquetes llevaba cada repartidor ni qué entregó exactamente. Si surge un problema, no tienes registro.',
+  },
+  {
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>`,
+    title: 'Tu cliente dice que ya pagó. Tú no recuerdas.',
+    text: 'No tienes un registro claro de qué clientes te adeudan, cuánto es y desde cuándo. El cobro es un caos cada fin de mes.',
+  },
+];
+---
+
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center">
+      <!-- Label -->
+      <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">El problema</p>
+      <h2 class="text-3xl font-bold sm:text-4xl">
+        Operar FLEX sin un sistema<br class="hidden sm:block" />
+        <span class="text-primary">te está costando dinero</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-gray-text">
+        Cada operador FLEX pasa por lo mismo antes de ordenar su operación.
+        ¿Reconoces alguno de estos?
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2">
+      {pains.map(pain => (
+        <div class="group flex items-start gap-4 rounded-xl border border-dark-border bg-dark-card p-6 transition-all duration-200 hover:border-red-500/40 hover:bg-[#1E1515]">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-red-400">
+            <Fragment set:html={pain.icon} />
+          </div>
+          <div>
+            <h3 class="mb-1.5 font-semibold text-white">{pain.title}</h3>
+            <p class="text-sm leading-relaxed text-gray-text group-hover:text-gray-300">
+              {pain.text}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Transition bridge -->
+    <div class="mt-14 text-center">
+      <p class="text-lg font-semibold text-white">
+        MoviPacks resuelve todo esto.
+        <span class="text-primary">En un solo lugar.</span>
+      </p>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,61 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Crea tu cuenta y configura en 5 minutos',
+    description: 'Registra tu operación, agrega tus repartidores y define los tipos de paquete que manejas. Sin instalaciones, desde el navegador.',
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>`,
+  },
+  {
+    number: '02',
+    title: 'Registra y asigna paquetes al recibirlos',
+    description: 'Cada paquete que llega queda registrado con fecha, hora, tipo y precio. Asígnalo a un repartidor cuando salga a entregar.',
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>`,
+  },
+  {
+    number: '03',
+    title: 'Cierra el día sabiendo exactamente cuánto ganaste',
+    description: 'El dashboard te muestra ganancias del día, comparación con ayer y cuánto te debe cada cliente — todo calculado solo.',
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+  },
+];
+---
+
+<section id="como-funciona" class="py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">Cómo funciona</p>
+      <h2 class="text-3xl font-bold sm:text-4xl">
+        Empieza a operar
+        <span class="text-primary">desde hoy</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-gray-text">
+        Sin capacitación, sin consultores, sin semanas de configuración.
+        Si sabes usar WhatsApp, sabes usar MoviPacks.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-8 lg:grid-cols-3">
+      {steps.map((step, i) => (
+        <div class="relative">
+          {/* Connector line */}
+          {i < steps.length - 1 && (
+            <div class="absolute top-10 left-1/2 hidden h-0.5 w-full bg-gradient-to-r from-primary/50 to-primary/10 lg:block"></div>
+          )}
+
+          <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <!-- Step number + icon -->
+            <div class="relative mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 shadow-lg shadow-primary/10">
+              <span class="text-2xl font-bold text-primary">{step.number}</span>
+            </div>
+
+            <h3 class="mb-3 text-xl font-semibold text-white">{step.title}</h3>
+            <p class="max-w-xs text-sm leading-relaxed text-gray-text">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

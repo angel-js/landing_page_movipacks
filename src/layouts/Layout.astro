@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const SITE_URL = 'https://TUDOMINIO.com';
+const DEFAULT_TITLE = 'MoviPacks — Sistema de gestión de paquetes FLEX Mercado Libre';
+const DEFAULT_DESCRIPTION = 'Gestiona tus paquetes FLEX de Mercado Libre en tiempo real. Controla inventario, deliverys y ganancias desde un solo sistema. Empieza gratis hoy.';
+
+const {
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  ogImage = `${SITE_URL}/og-image.png`
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={SITE_URL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_LA" />
+    <meta property="og:site_name" content="MoviPacks" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MoviPacks",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": DEFAULT_DESCRIPTION,
+      "url": SITE_URL,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Registro de paquetes en tiempo real",
+        "Inventario con filtros avanzados",
+        "Dashboard de ganancias",
+        "Estado de cuenta por cliente",
+        "Gestión de repartidores y clientes"
+      ]
+    })} />
+  </head>
+  <body class="min-h-screen bg-dark text-white antialiased">
+    <slot />
+  </body>
+</html>
