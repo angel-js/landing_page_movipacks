@@ -1,0 +1,56 @@
+---
+const APP_URL = 'https://app.TUDOMINIO.com';
+---
+
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-dark-card to-dark-card px-6 py-16 sm:px-12 sm:py-20">
+
+      <!-- Glow -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-24 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-primary/12 blur-3xl"></div>
+        <div class="absolute -bottom-16 right-0 h-32 w-64 rounded-full bg-primary/8 blur-2xl"></div>
+      </div>
+
+      <div class="relative text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl lg:text-5xl">
+          Deja el papel.<br />
+          Empieza hoy,
+          <span class="text-primary">gratis.</span>
+        </h2>
+
+        <p class="mx-auto mt-6 max-w-lg text-lg text-gray-text">
+          En 5 minutos tu operación está configurada y sabrás exactamente
+          cuánto ganaste, quién entregó qué y cuánto te deben tus clientes.
+        </p>
+
+        <div class="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <a
+            href={`${APP_URL}`}
+            class="inline-flex items-center gap-2 rounded-xl bg-primary px-10 py-4 text-lg font-bold text-dark shadow-xl shadow-primary/25 transition-all hover:bg-primary-hover hover:shadow-primary/40"
+          >
+            Crear cuenta gratis
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          {[
+            'Sin tarjeta de crédito',
+            '7 días de prueba gratis',
+            'Cancela cuando quieras',
+          ].map(signal => (
+            <span class="flex items-center gap-1.5 text-sm text-gray-text">
+              <svg class="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              {signal}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
