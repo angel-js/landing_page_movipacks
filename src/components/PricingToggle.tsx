@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const APP_URL = 'https://app.TUDOMINIO.com';
+const APP_URL = 'https://movipack.app';
 
 const plans = [
   {
