@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const APP_URL = 'https://movipack.app';
+const APP_URL = 'https://movipacks.vercel.app';
 
 const plans = [
   {
