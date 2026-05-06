@@ -1,5 +1,5 @@
 ---
-const APP_URL = 'https://movipack.app';
+const APP_URL = import.meta.env.PUBLIC_APP_URL ?? 'http://localhost:3000';
 
 const features = [
   'Paquetes ilimitados',
@@ -60,7 +60,7 @@ const features = [
 
         <!-- CTA -->
         <a
-          href={`${APP_URL}/register`}
+          href={`${APP_URL}/setup`}
           class="mt-8 block w-full rounded-xl bg-primary py-3.5 text-center text-base font-bold text-dark shadow-lg shadow-primary/20 transition-all hover:bg-primary-hover hover:shadow-primary/30"
         >
           Comenzar prueba gratuita
