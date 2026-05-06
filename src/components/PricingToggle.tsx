@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const APP_URL = 'https://movipacks.vercel.app';
+const APP_URL = import.meta.env.PUBLIC_APP_URL ?? 'http://localhost:3000';
 
 const plans = [
   {
@@ -119,7 +119,7 @@ export default function PricingToggle() {
               </div>
 
               <a
-                href={`${APP_URL}/register`}
+                href={`${APP_URL}/setup`}
                 className={`mt-6 block w-full rounded-xl py-3 text-center text-sm font-semibold transition-colors ${
                   plan.highlighted
                     ? 'bg-amber-500 text-neutral-900 hover:bg-amber-600'

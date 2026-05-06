@@ -1,5 +1,5 @@
 ---
-const APP_URL = 'https://movipacks.vercel.app';
+const APP_URL = import.meta.env.PUBLIC_APP_URL ?? 'http://localhost:3000';
 ---
 
 <section class="relative overflow-hidden pt-24 pb-20 sm:pt-32 sm:pb-28">
@@ -39,7 +39,7 @@ const APP_URL = 'https://movipacks.vercel.app';
         <!-- CTA único -->
         <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
           <a
-            href={`${APP_URL}/register`}
+            href={`${APP_URL}/setup`}
             class="w-full rounded-xl bg-primary px-8 py-4 text-center text-base font-bold text-dark shadow-lg shadow-primary/25 transition-all hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/35 sm:w-auto"
           >
             Empieza gratis — 7 días sin compromiso
