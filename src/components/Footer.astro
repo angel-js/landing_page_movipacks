@@ -1,6 +1,8 @@
 ---
 const currentYear = new Date().getFullYear();
 const SITE_URL = 'https://movipack.app';
+const APP_URL = import.meta.env.PUBLIC_APP_URL ?? 'http://localhost:3000';
+const DRIVER_LOGIN_URL = `${APP_URL}/setup?role=driver`;
 ---
 
 <footer class="border-t border-dark-border py-12">
@@ -24,6 +26,7 @@ const SITE_URL = 'https://movipack.app';
           <li><a href="#caracteristicas" class="text-sm text-gray-text transition-colors hover:text-white">Caracteristicas</a></li>
           <li><a href="#precios" class="text-sm text-gray-text transition-colors hover:text-white">Precios</a></li>
           <li><a href="#faq" class="text-sm text-gray-text transition-colors hover:text-white">FAQ</a></li>
+          <li><a href={DRIVER_LOGIN_URL} class="text-sm text-gray-text transition-colors hover:text-white">Soy repartidor</a></li>
         </ul>
       </div>
 
