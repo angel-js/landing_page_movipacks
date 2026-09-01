@@ -19,7 +19,7 @@ const faqs = [
   {
     question: '¿Cuántos repartidores y clientes puedo agregar?',
     answer:
-      'Los que necesites. No hay límite de repartidores, clientes ni paquetes. MoviPacks crece con tu operación sin cobrarte extra por ello.',
+      'Los que necesites. No hay límite de repartidores ni clientes. MoviPacks crece con tu operación.',
   },
   {
     question: '¿Mis datos están seguros?',
@@ -29,7 +29,7 @@ const faqs = [
   {
     question: '¿Qué pasa cuando terminan los 7 días de prueba?',
     answer:
-      'Te avisamos antes de que termine. Estamos definiendo los planes de precios pensados específicamente para operadores FLEX — serán accesibles. Los primeros operadores en registrarse tendrán condiciones especiales.',
+      'Te avisamos antes de que termine. Conversamos contigo y armamos juntos el plan que se ajusta a tu operación. Los primeros operadores en registrarse tienen condiciones especiales.',
   },
 ];
 
